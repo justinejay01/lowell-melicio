@@ -5,328 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Science Digital Multimedia Learning Module</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        #mainNav {
+            background: transparent;
+            transition: 250ms ease-in-out;
+            /* Add smooth transition */
         }
 
-        .hero-section {
-            background-image: url("plants-bg.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+        #mainNav.scrolled {
+            background: rgb(76, 175, 80, 1);
+            /* Optional: add a subtle shadow */
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+        /* Change link color and text color for the scrolled state */
+        #mainNav.scrolled .navbar-nav .nav-link,
+        #mainNav.scrolled .navbar-brand {
+            color: #ffffff !important;
+            /* Force text color to dark when scrolled */
         }
 
-        .navbar {
-            background: rgba(255, 255, 255, 0.1) !important;
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 10;
-        }
-
-        .navbar-brand {
-            color: white !important;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .leaf-icon {
-            width: 30px;
-            height: 30px;
-            background: #4CAF50;
-            border-radius: 50% 0;
-            transform: rotate(-45deg);
-            position: relative;
-        }
-
-        .leaf-icon::before {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: #66BB6A;
-            border-radius: 50% 0;
-            top: 7px;
-            left: 7px;
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.9) !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-            border-radius: 25px;
-            padding: 0.5rem 1.5rem !important;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            background: rgba(255, 255, 255, 0.2);
-            color: white !important;
-            transform: translateY(-2px);
-        }
-
-        .hero-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            z-index: 5;
-            position: relative;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 300;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-
-        .hero-title strong {
-            font-weight: 600;
-        }
-
-        .copyright {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(5px);
-            z-index: 10;
-        }
-
-        @keyframes grow {
-            0% {
-                transform: translateY(5px) scale(0.98);
-            }
-
-            100% {
-                transform: translateY(0) scale(1.02);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-                padding: 0 1rem;
-            }
-
-            .plants-container {
-                height: 150px;
-            }
-
-            .plant {
-                margin: 0 0.5rem;
-            }
-
-            .plant .stem {
-                height: calc(var(--stem-height) * 0.7);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .nav-link {
-                padding: 0.3rem 1rem !important;
-                margin: 0 0.2rem;
-            }
-        }
-
-        /* Content Section Styles */
-        .content-section {
-            min-height: 100vh;
-        }
-
-        .sub-nav {
-            margin-bottom: 2rem;
-        }
-
-        .sub-nav .nav-pills .nav-link {
-            background: rgba(76, 175, 80, 0.1);
-            color: #2e7d32;
-            border: 2px solid transparent;
-            border-radius: 25px;
-            padding: 0.75rem 1.5rem;
-            margin: 0 0.25rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        .sub-nav .nav-pills .nav-link:hover {
-            background: rgba(76, 175, 80, 0.2);
-            transform: translateY(-2px);
-            border-color: #4CAF50;
-        }
-
-        .sub-nav .nav-pills .nav-link.active {
-            background: #4CAF50;
-            color: white;
-            border-color: #388E3C;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
-        }
-
-        .content-sidebar {
-            background: rgba(76, 175, 80, 0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            border-left: 4px solid #4CAF50;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .content-menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .content-menu li {
-            position: relative;
-            padding: 1rem 0;
-            padding-left: 2rem;
-            color: #2e7d32;
-            font-size: 1rem;
-            line-height: 1.6;
-            border-bottom: 1px solid rgba(76, 175, 80, 0.2);
-        }
-
-        .content-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .content-menu li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #4CAF50;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .main-content {
-            position: relative;
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            margin-left: 1rem;
-        }
-
-        .content-title {
-            color: #2e7d32;
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .content-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: #4CAF50;
-            border-radius: 2px;
-        }
-
-        .content-text p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .floating-leaf {
-            position: absolute;
-            width: 40px;
-            height: 30px;
-            background: #66BB6A;
-            border-radius: 50% 0;
-            opacity: 0.3;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .leaf-1 {
-            top: 20%;
-            right: 10%;
-            transform: rotate(-30deg);
-            animation-delay: 0s;
-        }
-
-        .leaf-2 {
-            bottom: 30%;
-            right: 5%;
-            transform: rotate(45deg);
-            animation-delay: 3s;
-            background: #4CAF50;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px) rotate(var(--rotation, 0deg));
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(var(--rotation, 0deg));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-
-            .content-sidebar {
-                margin-bottom: 1rem;
-            }
-
-            .sub-nav .nav-pills .nav-link {
-                padding: 0.5rem 1rem;
-                margin: 0.25rem;
-                font-size: 0.8rem;
-            }
-
-            .content-title {
-                font-size: 2rem;
-            }
+        #mainNav.scrolled .navbar-nav .nav-link.active,
+        #mainNav.scrolled .navbar-nav .nav-link:hover {
+            background: rgb(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
-<body class="hero-section">
+<body class="hero-section" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="leaf-logo.png" alt="Logo" width="30" class="me-2">
@@ -344,20 +54,21 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">HOME</a>
+                        <a class="nav-link active" href="#home">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT</a>
+                        <a class="nav-link" href="#about">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">MORE</a>
+                        <a class="nav-link" href="#more">MORE</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+
+    <div id="home" class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <!-- Hero Content -->
         <div class="hero-content">
             <div class="container">
@@ -370,27 +81,31 @@
     </div>
 
     <!-- Content Section -->
-    <section class="content-section">
+    <section id="about" class="content-section pb-5" style="background: rgba(255, 255, 255, 0.25) !important; padding-top: 120px;">
         <div class="container">
             <!-- Sub Navigation Tabs -->
-            <div class="row mb-4">
+            <div class="row">
                 <div class="col-12">
                     <nav class="sub-nav">
                         <ul class="nav nav-pills justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#" data-section="introduction">INTRODUCTION</a>
+                                <a class="nav-link active" data-section="introduction" data-bs-toggle="tab"
+                                    href="#tab1">INTRODUCTION</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-section="lesson-guide">LESSON GUIDE</a>
+                                <a class="nav-link" data-section="lesson-guide" data-bs-toggle="tab" href="#tab2">LESSON
+                                    GUIDE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-section="enrichment">ENRICHMENT</a>
+                                <a class="nav-link" data-section="enrichment" data-bs-toggle="tab"
+                                    href="#tab3">ENRICHMENT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-section="assessment">ASSESSMENT</a>
+                                <a class="nav-link" data-section="assessment" data-bs-toggle="tab"
+                                    href="#tab4">ASSESSMENT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-section="summary">SUMMARY</a>
+                                <a class="nav-link" data-section="summary" data-bs-toggle="tab" href="#tab5">SUMMARY</a>
                             </li>
                         </ul>
                     </nav>
@@ -399,33 +114,904 @@
 
             <!-- Content Area -->
             <div class="row">
-                <div class="col-lg-4 col-md-5">
-                    <!-- Sidebar with bullet points -->
-                    <div class="content-sidebar">
-                        <ul class="content-menu">
-                            <li><em>Brief overview of the lesson/topic</em></li>
-                            <li><em>Learning Objectives</em></li>
-                            <li><em>Importance/Relevance of the topic in real life</em></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-7">
-                    <!-- Main Content -->
-                    <div class="main-content">
-                        <h2 class="content-title">Introduction</h2>
-                        <div class="content-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab1">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <!-- Sidebar with bullet points -->
+                                <div class="content-sidebar">
+                                    <ul class="content-menu">
+                                        <li><em>Brief overview of the lesson/topic</em></li>
+                                        <li><em>Learning Objectives</em></li>
+                                        <li><em>Importance/Relevance of the topic in real life</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-7">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Introduction</h2>
+                                    <div class="content-text">
+                                        <p>
+                                            The systems of the body are made up of different organs. Each organ plays a
+                                            specific
+                                            role to maintain proper functioning of the body.
+                                            When one organ is malfunctioning, the human body is affected.
+                                        </p>
 
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum.</p>
+                                        <p>
+                                            The human reproductive systems — male and female — are composed of external
+                                            and
+                                            internal
+                                            organs that work together for reproduction.
+                                        </p>
+
+                                        <p>
+                                            Have you ever asked your parents how your family grew and where you have
+                                            come
+                                            from?
+                                            All living things, including human beings, are able to produce offspring
+                                            through
+                                            the
+                                            process known as <strong>Reproduction</strong>.
+                                        </p>
+
+                                        <p class="mt-4">The learners should be able to…</p>
+                                        <ol class="list-group list-group-numbered mt-3">
+                                            <li class="list-group-item">Describe the parts of the reproductive system
+                                                and
+                                                their
+                                                functions.</li>
+                                            <li class="list-group-item">Explain the role of hormones involved in the
+                                                female
+                                                and male
+                                                reproductive systems.</li>
+                                            <li class="list-group-item">Describe the feedback mechanisms involved in
+                                                regulating
+                                                processes in the female reproductive system (e.g., menstrual cycle).
+                                            </li>
+                                            <li class="list-group-item">Describe how the nervous system coordinates and
+                                                regulates
+                                                these feedback mechanisms to maintain homeostasis.</li>
+                                        </ol>
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <!-- Sidebar with bullet points -->
+                                <div class="content-sidebar">
+                                    <ul class="content-menu">
+                                        <li><em>Motivation / Engagement</em></li>
+                                        <ul class="dashed">
+                                            <li>Short video/interactive question</li>
+                                            <li>For fact or real-life scenario</li>
+                                        </ul>
 
-                        <!-- Decorative leaf elements -->
-                        <div class="floating-leaf leaf-1"></div>
-                        <div class="floating-leaf leaf-2"></div>
+                                        <li><em>Lesson Content</em></li>
+                                        <ul class="dashed">
+                                            <li>Text, visuals, narrations</li>
+                                            <li>Infographic diagram</li>
+                                            <li>Interactive activities</li>
+                                            <li>Matching or labeling</li>
+                                            <li>Short quizzes</li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-7">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Lesson 1: THE REPRODUCTION SYSTEM</h2>
+                                    <div class="content-text">
+                                        <p> The morphological and physiological structure of the male reproductive
+                                            system is different from the female reproductive system. The external and
+                                            internal parts differ in size and shape as well as its functions. Though the
+                                            parts and functions of the reproductive system are different in some
+                                            aspects, they are coordinated parts and functions. The role of the male
+                                            reproductive system is to produce and transport sperm cells while the female
+                                            reproductive system is to produce egg cells and for child-bearing. Without
+                                            the fusion of the gamete from the testis of the male organ with gamete from
+                                            the female organ, reproduction will not occur. </p>
+
+                                        <h5 class="mt-4">MORPHOLOGY AND PHYSIOLOGY OF THE MALE REPRODUCTIVE SYSTEM</h5>
+                                        <img src="img/Picture1.png" alt="" srcset="" class="img-fluid">
+
+                                        <h5 class="mt-3">THE GLANDS AND DUCTS OF THE MALE REPRODUCTIVE ORGAN</h5>
+                                        <img src="img/Picture2.png" class="img-fluid" alt="" srcset="">
+
+                                        <h3 class="mt-3">THE SPERM CELL</h3>
+                                        <img src="img/Picture3.png" alt="" class="img-fluid mb-3">
+                                        <img src="img/Picture4.png" alt="" class="img-fluid">
+                                        <p> The sperm cell is a unique structure located in the testis. It fertilizes
+                                            the egg. Males have two testes found inside the scrotum. It produces
+                                            millions of minute sperm cells which can be observed only under the
+                                            microscope. The sperm cell which comes from the testes, and travels in the
+                                            epididymis are temporarily stored until they are released. The sperm cells
+                                            are release and move along the vas deferens. Along the way, the sperms
+                                            combined with the nutrient secretions from the prostate gland and seminal
+                                            vesicles. This mixture is called semen. The semen will be transported into
+                                            the urethra and out of the penis. </p>
+
+                                        <h5>PARTS AND FUNCTION OF THE FEMALE REPRODUCTIVE SYSTEM</h5>
+                                        <img src="img/Picture5.png" alt="" class="img-fluid">
+                                        <ol class="mb-3">
+                                            <li>
+                                                <strong>Ovaries:</strong> The two ovaries are small and almond-shaped
+                                                organs. They are located inside the female, one on each side of the body
+                                                a few inches below the waist. The ovaries secrete hormones called
+                                                estrogen and progesterone to produce mature egg cells. Egg cells begin
+                                                to mature when the female reaches puberty. During puberty, ovaries
+                                                usually produce and release one ripened egg every 28 days. This process
+                                                is called ovulation.
+                                            </li>
+
+                                            <li>
+                                                <strong>Fallopian tubes:</strong> These are the two very fine tubes
+                                                which extend from each ovary into the uterus. Their main function is to
+                                                contain the egg until fertilization takes place and to provide a
+                                                passageway leading the sperm to the egg and the fertilized egg to the
+                                                uterus.
+                                            </li>
+
+                                            <li>
+                                                <strong>Uterus or womb:</strong> The uterus is a hollow, muscular,
+                                                pear-shaped organ located between the two ovaries. It is where the
+                                                fertilized egg will develop and grow into a baby.
+                                            </li>
+
+                                            <li>
+                                                <strong>Cervix:</strong> A narrow structure within an inch-long canal
+                                                connecting the lower end of the uterus to the upper portion of the
+                                                vagina.
+                                            </li>
+
+                                            <li>
+                                                <strong>Vagina or birth canal:</strong> The vagina or birth canal is the
+                                                hollow tube leading from the cervix to the outside of the body. The wall
+                                                is elastic, which allows it to expand during childbirth and sexual
+                                                intercourse.
+                                            </li>
+
+                                            <li>
+                                                <strong>Vulva:</strong> The external genitalia, which includes the
+                                                following parts:
+                                                <ul class="mt-2">
+                                                    <li><strong>Mons veneris:</strong> The mons veneris is the hairy
+                                                        skin-covered pad of fat over the pubic bone.</li>
+                                                    <li><strong>Labia minora:</strong> The labia minora are the small
+                                                        lips covered with modified skin.</li>
+                                                    <li><strong>Labia majora:</strong> The labia majora are the large
+                                                        lips covered with pubic hair.</li>
+                                                    <li><strong>Clitoris:</strong> The clitoris is the small
+                                                        almond-shaped erectile tissue located below the junction of the
+                                                        two minora.</li>
+                                                    <li><strong>Vaginal orifice:</strong> The vaginal orifice is the
+                                                        opening into the vagina.</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+
+                                        <h5>ROLE OF HORMONES IN THE REPRODUCTIVE SYSTEM</h5>
+                                        <img src="img/Picture6.png" alt="" class="img-fluid">
+
+                                        <p>
+                                            Hormones play an important role that regulates the function of a specific
+                                            organ of the body. These are regulating and complex chemical substances
+                                            secreted by the endocrine glands that are carried through the blood stream
+                                            to the target organ in many areas of the body. The hormones of the
+                                            reproductive system carry a specific role during puberty, ovulation,
+                                            pregnancy, and development. The reproductive glands are controlled by the
+                                            pituitary gland, which is controlled by the hypothalamus. The reproductive
+                                            glands of boys and girls work at low levels until the age of 10. After this
+                                            age, hormone levels begin to increase, and physical changes start to
+                                            develop. The hypothalamus releases chemical substances that signal the
+                                            pituitary gland to start producing two hormones responsible for reproduction
+                                            – the follicle-stimulating hormone (FSH) and luteinizing hormone (LH). Both
+                                            males and females produce these kinds of hormone. They affect the testes in
+                                            men and the ovaries in women.
+                                        </p>
+                                        <p>
+                                            The LH of the male sends signals in the testes to produce testosterone with
+                                            FSH to control the production of the sperm and the growth of facial hair. In
+                                            females, the pituitary hormones LH and FSH stimulate the ovaries to produce
+                                            estrogen and progesterone. These hormones are responsible to produce ova or
+                                            mature egg cells. Other roles of the reproductive hormone are listed below.
+                                        </p>
+
+                                        <img src="img/Picture7.png" alt="" class="img-fluid">
+                                        <h5>MENSTRUAL CYCLE</h5>
+                                        <img src="img/Picture8.png" alt="" class="img-fluid">
+
+                                        <p>
+                                            Females begin to menstruate between the ages of 11 and 15. Menstruation, or
+                                            monthly period, is the monthly shedding of the lining of the uterus.
+                                        </p>
+                                        <ol>
+                                            <li>Menstrual cycle begins when an egg matures or ripens in one of the
+                                                ovaries. At the same time, the endometrium, the lining of the uterus,
+                                                starts to thicken for possible pregnancy. </li>
+                                            <li>The matured egg releases from the ovary. The lining of the uterus
+                                                continuously thickens until it is ready to receive the fertilized egg.
+                                            </li>
+                                            <li>The thickened uterus will serve as the home for the developing embryo.
+                                            </li>
+                                            <li>If pregnancy does not successfully happen, the endometrium breaks down
+                                                or is destroyed and discharged from the body. This discharge of blood
+                                                and tissue is known as menstruation or menstrual period. </li>
+                                            <li>The menstrual cycle lasts 28 days, but there are some females menstruate
+                                                cycles as short as 21 days, or as long as 35 days and are considered
+                                                normal. </li>
+                                            <li>The endocrine system plays an important role for the menstrual cycle.
+                                            </li>
+                                            <li>During the first half of the cycle (days 1-14), pituitary hormone FSH
+                                                stimulates an egg to mature inside one of the ovaries.</li>
+                                            <li>When the egg starts to develop, it secretes estrogen which causes the
+                                                endometrium to thicken. </li>
+                                            <li>At the middle of menstrual cycle, which is about day 14, the level of LH
+                                                (Luteinizing Hormone) starts to rise; thus, ovulation occurs. </li>
+                                            <li>The ovary releases the egg and travels into the fallopian tube. </li>
+                                            <li>It takes seven days for the egg to travel into the fallopian tube going
+                                                to the uterus. </li>
+                                            <li>The production of the progesterone increases after the time the egg
+                                                reaches the uterus. As the progesterone increases, it maintains the
+                                                growth of the endometrium. </li>
+                                            <li>If the egg has not been fertilized, progesterone and estrogen levels
+                                                drop. The endometrium breaks down and the unfertilized egg passes out of
+                                                the body through the vagina.</li>
+                                        </ol>
+
+                                        <h5>THE DEVELOPMENT OF LIFE</h5>
+                                        <p>Stages of Early Embryonic Animal Development</p>
+                                        <img src="img/Picture9.png" alt="" class="img-fluid">
+                                        <img src="img/Picture10.png" alt="" class="img-fluid">
+
+                                        <h5>THE PROCESS OF FERTILIZATION AND THE DEVELOPMENTOF THE HUMAN EMBRYO</h5>
+                                        <ol>
+                                            <li><strong>First Week of Development</strong><br>
+                                                The union of sperm cell from a male and an egg cell from a female is
+                                                called fertilization. After fertilization of the egg cell, the zygote
+                                                travels in the oviduct to get nutrients from maternal secretions, then
+                                                will undergo the process of first mitotic cell division which forms
+                                                cleavages. When it reaches the uterus, cleavages have transformed into a
+                                                solid group of cells called morula and later on will develop into a
+                                                blastocyst. There is an inner cell mass of the blastocysts having a
+                                                surface cell layer called the trophoblast.
+                                                <br>
+                                                <img src="img/Picture11.png" alt="" class="img-fluid">
+                                                <br>
+                                                Secretion of chorionic gonadotropin from trophoblast helps to maintain
+                                                the corpus luteum to grow and to secrete estrogens and progesterone.
+                                                These hormones help the uterine lining to do its task during pregnancy.
+                                                Once the blastocyst is formed, it begins to adhere itself to the uterine
+                                                lining. This process of attachment is also known as implantation. After
+                                                the blastocyst has been implanted, it is now called embryo.
+                                            </li>
+                                            <li><strong>The Embryo</strong><br>
+                                                Embryo is the initial development stage in human after fertilization.
+                                                The bond that holds the embryo to the wall of the uterus is called the
+                                                placenta. Approximately 25 days, after fertilization, a cord forms
+                                                between the embryo and the sac (called the placenta). This cord is
+                                                referred to as the umbilical cord which is the embryo's lifeline,
+                                                meaning the embryo gets its oxygen and food from the mother through the
+                                                placenta.
+                                                The developing embryo is enclosed in a sac of thin sheet of tissue
+                                                called the amniotic sac. Within this sac is the amniotic fluid where the
+                                                embryo floats. This fluid serves as a shock absorber and helps the
+                                                embryo to maintain its temperature.
+                                                <img src="img/Picture12.png" alt="" class="img-fluid">
+                                            </li>
+                                            <li><strong>The Fetus</strong><br>
+                                                After two months, the embryo is about 1.2 inches (3 centimeters) long
+                                                and has a recognizable human form or a fetus. The fetus grows with the
+                                                help of the placenta. The placenta connects to the developing embryo by
+                                                means of the umbilical cord. At four months, the fetus moves and can be
+                                                recognized. The baby's eyelashes are formed, and eyelids can be
+                                                recognized at seven months. All the organs are well developed on the
+                                                ninth month; the baby is ready to be born.
+                                                <br>
+                                                <img src="img/Picture13.png" alt="" class="img-fluid">
+                                                <br>
+                                                At birth, many of the baby's organs and systems are not yet fully
+                                                developed. Their bones are still soft and flexible. At a very early
+                                                stage of life, it is necessary to take good care of every individual to
+                                                protect his/her different organs in order for him/her to have a healthy
+                                                body all throughout his/her life.
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                                <!-- Main Content -->
+                                <div class="main-content mt-3">
+                                    <h2 class="content-title">Lesson 2: THE ENDOCRINE AND NERVOUS SYSTEM</h2>
+                                    <div class="content-text">
+                                        <h5>THE ENDOCRINE AND NERVOUS SYSTEM</h5>
+                                        <p>The endocrine system is made up of a group of organs called endocrine glands.
+                                            A gland is the smallest living unit in the body that produces and releases a
+                                            chemical substance called hormones. In the previous lesson, you have studied
+                                            the different glands and specific role in the reproductive organs. Now, let
+                                            us explain the overall function of this system in the body.</p>
+                                        <h5>THE OVER-ALL ROLE OF THE ENDOCRINE SYSTEM</h5>
+                                        <ol>
+                                            <li>
+                                                Endocrine system are consists of many glands which secretes hormones
+                                                directly into the bloodstream to regulate daily activities of the body
+                                                and controls its overall development. The hormones act as chemical
+                                                messengers in the body which stimulates many organs such as the ovaries
+                                                and the testes.
+                                            </li>
+                                            <li>
+                                                Endocrine system is also known as the "system of checks and balances"
+                                                that works to keep the body system healthy. One of the instances when
+                                                the endocrine system is working properly is by sending chemical signals
+                                                to another gland which responds by controlling the chemicals of the
+                                                first gland.
+                                            </li>
+                                            <li>
+                                                It is similar to thermostat (temperature regulator) because it may turn
+                                                on when the temperature is below normal and may turn off when the
+                                                temperature is above normal, thus the endocrine system turns on and off
+                                                in response to the level of hormones in the body.
+                                            </li>
+                                            <li>
+                                                When the endocrine system is not properly doing its job, the over health
+                                                of the body may be affected such as energy level, physical appearance
+                                                and the ability to produce offspring.
+                                            </li>
+                                        </ol>
+                                        <h5>THE LOCATION AND ROLE OF THE ENDOCRINE GLANDS IN THE BODY</h5>
+                                        <img src="img/Picture14.png" alt="" class="img-fluid">
+                                        <img src="img/Picture15.png" alt="" class="img-fluid">
+
+                                        <h5>POSITIVE AND NEGATIVE FEEDBACK COORDINATED BY THE DIFFERENT SYSTEMS OF THE
+                                            HUMAN BODY</h5>
+                                        <p>
+                                            Homeostasis is responsible in the regulation and maintenance of the internal
+                                            environment of the body. It regulates body temperature, fluids, salts,
+                                            acids, gases, and nutrients that help support human life. Internal control
+                                            system of the body responds immediately to change from the different
+                                            conditions or internal environment. There are different control systems in
+                                            the body-sensors, control center, communicating system and targets.
+                                        </p>
+
+                                        <h6>1. SENSORS</h6>
+                                        <p>
+                                            Sensors are receptors which are responsible in gathering information about
+                                            the conditions inside and outside of the body. For instance, during summer
+                                            or winter, your skin and nostrils sensors function as receptors in gathering
+                                            data information about the temperature. The skin is made up of many internal
+                                            sensors that detect changes in the environment. The human body is made up of
+                                            sensory neurons which carry impulses to the brain or spinal cord.
+                                        </p>
+                                        <img src="img/Picture16.png" alt="" class="img-fluid">
+                                        <h6>2. CONTROL CENTER</h6>
+                                        <p>
+                                            The control center of the body is the brain which part of the nervous
+                                            system. The brain receives information from the sensors. It then examines
+                                            the information to the ideal values (set point) in which the body functions
+                                            well. If the set point is below the control center quickly responds by
+                                            sending messages through the communicating systems-the nervous system and
+                                            the endocrine system.
+                                        </p>
+                                        <img src="img/Picture17.png" alt="" class="img-fluid">
+                                        <h6>3. COMMUNICATING SYSTEMS</h6>
+                                        <p>
+                                            The nervous system and the endocrine system are the communicating systems of
+                                            the body. They carry the information to all parts of the body. Through nerve
+                                            impulse and hormones dictates the target cell or organs in the body how to
+                                            respond with the internal and external changes.
+                                        </p>
+                                        <img src="img/Picture18.png" alt="" class="img-fluid">
+                                        <h6>4. TARGETS</h6>
+                                        <p>
+                                            Target is any organ, tissue, or cell which is responsible to the changes in
+                                            the activity of the body in response to the message received. The human body
+                                            is made up of electrical signals or neurons which receive input, process the
+                                            input, and produce a response.
+                                        </p>
+                                        <img src="img/Picture19.png" alt="" class="img-fluid">
+
+                                        <h5>PARTS OF THE NEURON:</h5>
+                                        <ul>
+                                            <li>Dendrites are branched cell components that receives stimulus from other
+                                                neurons or sensory receptors.</li>
+                                            <li>Cell body contains a nucleus which will process the stimulus.</li>
+                                            <li>Axon will transmit stimulus to a gland, muscle, organ, or other neuron.
+                                                
+                                        <img src="img/Picture20.png" alt="" class="img-fluid">
+                                            </li>
+                                        </ul>
+
+                                        <h5>TARGET CELL RESPONSE TO HORMONES</h5>
+                                        <p>
+                                            Different types of hormones are secreted by endocrine glands and are
+                                            directly diffused into the bloodstream. The hormones will travel to the
+                                            different parts of the body. Only the target cells have receptors to which
+                                            the specific type of hormone can bind. The response occurs when the hormones
+                                            lock, and key binding triggers the target tissue.
+                                        </p>
+
+                                        <h5>FEEDBACK MECHANISMS INVOLVED IN REGULATING PROCESSES IN THE FEMALE
+                                            REPRODUCTIVE SYSTEM</h5>
+                                        <p>
+                                            Many functions of the body and processes operate using feedback systems. The
+                                            body maintains its state of balance or homeostasis through a control system
+                                            activated by many feedback systems. To maintain normal cell functions of the
+                                            body, intracellular and extracellular substances in the environments, such
+                                            as pH, temperature, and required amounts of substances needed by the body
+                                            have to be a relatively constant. In addition, the body must cope with
+                                            pollution, infection, stress, and other conditions. To maintain life
+                                            processes and proper functions of the cell, feedback system is important.
+                                        </p>
+                                        <p>
+                                            The nervous system and the endocrine system play an important role to
+                                            function the feedback system of the body. The nerve cells are able to
+                                            perceive changes once hormones are releases in the body from the endocrine
+                                            system in which the brain respond quickly. The hormones of the endocrine
+                                            system control the system slowly. For instance, hormones and nerve cells
+                                            regulate the movement during labor contractions. When labor starts, nerve
+                                            cells in the uterus signal the hypothalamus to release oxytocin hormone into
+                                            the bloodstream, which causes the uterus to contract. Feedback regulation
+                                            can be either positive or negative.
+                                        </p>
+
+                                        <h5>HOW NERVOUS SYSTEM COORDINATES AND REGULATES FEEDBACK MECHANISM TO MAINTAIN
+                                            HOMEOSTASIS</h5>
+
+                                        <h6>Homeostasis and Internal Environment</h6>
+                                        <p>
+                                            The complex tissues, organs, and organ systems in our body must respond to
+                                            the different conditions and situations in the environment. The body has
+                                            variety control systems to keep its internal environment stable and
+                                            responsible for maintaining homeostasis.
+                                        </p>
+
+                                        <h6>1. Negative Feedback</h6>
+                                        <p>
+                                            Negative feedback is a control system to reduce or minimize any changes or
+                                            conditions of the body, which keeps the whole body system stable. It is also
+                                            a mechanism that regulates homeostasis. The term negative is a deviation
+                                            from set point. The set point refers to the normal value and ideal
+                                            requirement of the body to maintain homeostasis.
+                                        </p>
+                                        <p>
+                                            The secretions of hormones from the endocrine glands are under the control
+                                            of hypothalamus which is also controlled by negative feedback. Increased
+                                            breathing is a good example of how a negative feedback loop works. Oxygen is
+                                            necessary for breathing in order for the proper functioning of the body and
+                                            to secrete carbon dioxide. Due to the presence of high levels of carbon
+                                            dioxide in extracellular fluid, breathing increases and therefore oxygen
+                                            supply increases in the air in the lungs. As a result, counteracts the high
+                                            amounts of carbon dioxide. High level of carbon dioxide is harmful to the
+                                            body. Negative feedback loops maintain state of balance by reversing change
+                                            to return its normal condition of the body.
+                                        </p>
+                                        <p>
+                                            Another example of a negative feedback mechanism is when the levels of
+                                            glucose (sugar) in the blood are regulated the hormone insulin. When blood
+                                            sugar increases in the body, the receptors in the body detect a change. Due
+                                            to this condition, the pancreas release insulin into the blood effectively
+                                            to lower down the sugar level. The pancreas stops releasing insulin once the
+                                            blood glucose level reach homeostasis.
+                                        </p>
+                                        <img src="img/Picture21.png" alt="" class="img-fluid">
+
+                                        <h6>Components of Negative Feedback</h6>
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Component</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Control Center</td>
+                                                    <td>The brain, which establishes set point.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Receptor</td>
+                                                    <td>Detects changes within the body. Monitors the environment and
+                                                        responds to stimuli.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Effector</td>
+                                                    <td>Responsible for the response to changes.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Stimulus</td>
+                                                    <td>Produces a change to a variable (the factor being regulated).
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h6>2. Positive Feedback</h6>
+                                        <p>
+                                            Positive feedback is a control system which uses information from sensors to
+                                            increase the rate of processes. It is also exact opposite of a negative
+                                            feedback mechanism. This type of feedback is important whenever a rapid
+                                            change is necessary. It deviates from a set point; therefore, it becomes
+                                            greater which makes a bad situation worse. This type of feedback is rarely
+                                            found in healthy people For instance, if you cut your finger, positive
+                                            feedback mechanism is used in the production of nerve impulse and increase
+                                            the rate of change in blood clotting until the wound is sealed. Another
+                                            example of positive feedback system is during child birth. During labor, the
+                                            oxytocin release in the uterus intensifies and speeds up contractions. The
+                                            release of oxytocin stops when the baby is born. The birth ends the release
+                                            of oxytocin and ends the positive feedback mechanism.
+                                        </p>
+
+                                        <h5>LIFE LESSONS</h5>
+                                        <p>
+                                            Remember that God created human beings, making them to be like Himself. He
+                                            created them male and female and blessed them to have many children so that
+                                            their descendants will live all over the earth and bring it under their
+                                            control. Couples have their own choice and plan how many children could
+                                            possibly be raised. Health histories must be considered and decide whether
+                                            or not to have a baby.
+                                        </p>
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab3">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <!-- Sidebar with bullet points -->
+                                <div class="content-sidebar">
+                                    <ul class="content-menu">
+                                        <li><em>Suggest Youtube video, virtual lab</em></li>
+                                        <li><em>Embedded videos or 3D</em></li>
+                                        <li><em>Explore more</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-7">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Enrichment</h2>
+                                    <div class="content-text">
+                                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                                    <button class="accordion-button" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#panelsStayOpen-collapseOne"
+                                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                                        Lesson 1: THE REPRODUCTION SYSTEM
+                                                    </button>
+                                                </h2>
+                                                <div id="panelsStayOpen-collapseOne"
+                                                    class="accordion-collapse collapse"
+                                                    aria-labelledby="panelsStayOpen-headingOne">
+                                                    <div class="accordion-body">
+                                                        <div class="ratio ratio-16x9">
+                                                            <iframe src="files/Lesson 1. Reproductive System.mp4"
+                                                                frameborder="0"></iframe>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#panelsStayOpen-collapseTwo"
+                                                        aria-expanded="false"
+                                                        aria-controls="panelsStayOpen-collapseTwo">
+                                                        Lesson 2: THE ENDOCRINE AND NERVOUS SYSTEM
+                                                    </button>
+                                                </h2>
+                                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                                    <div class="accordion-body">
+                                                        <div class="ratio ratio-16x9">
+                                                            <iframe
+                                                                src="files/Lesson 1.2. Endocrine and Nervous System.mp4"
+                                                                frameborder="0"></iframe>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab4">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <!-- Sidebar with bullet points -->
+                                <div class="content-sidebar">
+                                    <ul class="content-menu">
+                                        <li><em>Quiz (auto-graded of digital platforms allows)</em></li>
+                                        <li><em>Performance task</em></li>
+                                        <li><em>Summative or Diagnostic</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-7">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Assessment</h2>
+                                    <div class="content-text">
+                                        <h2 class="mb-3">I. Multiple Choice</h2>
+                                        <p>Choose the correct answer. Write the letter of the best answer in the blank
+                                            before each number.</p>
+
+                                        <p>__________ 1. Which of these does not correctly contrast sperm with eggs?</p>
+                                        <table class="table table-bordered text-center w-75">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>SPERM</th>
+                                                    <th>EGGS</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>a. mass produced</td>
+                                                    <td>one each month</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>b. much smaller</td>
+                                                    <td>much larger</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>c. moves along the vas deferens</td>
+                                                    <td>interstitial cells</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>d. arrow shaped</td>
+                                                    <td>round shaped</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <p>__________ 2. The uterus __________________________.</p>
+                                        <ul>
+                                            <li>a. is connected to both the oviducts and the vagina</li>
+                                            <li>b. is not an endocrine gland</li>
+                                            <li>c. contributes to the development of the placenta</li>
+                                            <li>d. all of these are correct</li>
+                                        </ul>
+
+                                        <p>__________ 3. Pregnancy begins ____________________.</p>
+                                        <ul>
+                                            <li>a. when an egg is fertilized</li>
+                                            <li>b. upon successful implantation</li>
+                                            <li>c. when ovulation occurs</li>
+                                            <li>d. during the follicular phase</li>
+                                        </ul>
+
+                                        <p>__________ 4. The anterior pituitary stimulates what gland in the human body?
+                                        </p>
+                                        <ul>
+                                            <li>a. thyroid</li>
+                                            <li>b. adrenal cortex</li>
+                                            <li>c. adrenal medulla</li>
+                                            <li>d. pancreas</li>
+                                        </ul>
+
+                                        <p>__________ 5. Which male organ which produce millions of tiny sperm cells?
+                                        </p>
+                                        <ul>
+                                            <li>a. testes</li>
+                                            <li>b. epididymis</li>
+                                            <li>c. vas deferens</li>
+                                            <li>d. urethra</li>
+                                        </ul>
+
+                                        <p>__________ 6. When muscle of the uterus will push the baby through the cervix
+                                            and out of the vagina, this process is called ____________.</p>
+                                        <ul>
+                                            <li>a. birth</li>
+                                            <li>b. fertilization</li>
+                                            <li>c. reproduction</li>
+                                            <li>d. contraction</li>
+                                        </ul>
+
+                                        <p>__________ 7. Which of the following that it looks like a sac or pouch which
+                                            encloses the testes?</p>
+                                        <ul>
+                                            <li>a. scrotum</li>
+                                            <li>b. epididymis</li>
+                                            <li>c. vas deferens</li>
+                                            <li>d. penis</li>
+                                        </ul>
+
+                                        <p>__________ 8. The vas deferens ____________________.</p>
+                                        <ul>
+                                            <li>a. becomes erect</li>
+                                            <li>b. carries sperm</li>
+                                            <li>c. is rounded by the prostate gland</li>
+                                            <li>d. all of these are correct</li>
+                                        </ul>
+
+                                        <p>__________ 9. A simple goiter is caused by ______________.</p>
+                                        <ul>
+                                            <li>a. too much salt in the diet</li>
+                                            <li>b. too little iodine in the diet</li>
+                                            <li>c. too many sweets in the diet</li>
+                                            <li>d. a bland diet</li>
+                                        </ul>
+
+                                        <p>__________ 10. Which of the following statements is a best example of
+                                            positive feedback mechanism?</p>
+                                        <ul>
+                                            <li>a. You cannot hold your breath for a long time.</li>
+                                            <li>b. The release of certain growth hormones during puberty.</li>
+                                            <li>c. The evaporation of sweat from the skin has a strong cooling effect.
+                                            </li>
+                                            <li>d. It releases heat energy and helps warm the body back to 37°C.</li>
+                                        </ul>
+
+                                        <h2 class="mt-5">II. Write the correct answer on the space provided.</h2>
+                                        <ol>
+                                            <li>The external sac that houses the testes.</li>
+                                            <li>The male organ that transports semen and urine out of the body.</li>
+                                            <li>The process in which the ovary releases a ripened egg cell.</li>
+                                            <li>The monthly shedding of the lining of the uterus.</li>
+                                            <li>The narrow passage that connects the uterus to the vagina.</li>
+                                            <li>The reproductive hormone responsible for the development of male
+                                                secondary sex characteristics.</li>
+                                            <li>The hormone secreted by the ovaries that thickens the endometrium.</li>
+                                            <li>The cord that connects the fetus to the placenta and serves as the
+                                                fetus’ lifeline.</li>
+                                            <li>The thin sac filled with fluid that protects the developing embryo.</li>
+                                            <li>The endocrine gland considered as the "control center" of the endocrine
+                                                system</li>
+                                        </ol>
+
+                                        <h2 class="mt-5">III. Match Column A with the correct answer in Column B.</h2>
+                                        <p>Write only the letter of the correct answer.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <table class="table table-bordered">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>Column A</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>A. Ovaries</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>B. Fallopian Tubes</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>C. Uterus</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>D. Cervix</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>E. Vagina</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>F. Estrogen</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>G. Progesterone</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>H. Testosterone</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>I. Negative Feedback</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>J. Positive Feedback</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <table class="table table-bordered">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>Column B</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1. Thickens the endometrium to prepare for pregnancy
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2. Regulates menstrual cycle and secondary female sex
+                                                                traits</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3. Site where fertilized egg implants and develops</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4. Transport passage of egg cells; fertilization usually
+                                                                occurs here</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5. Hormone that develops sperm cells and male traits
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6. Mechanism that maintains stability by reversing
+                                                                changes in the body</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>7. Control mechanism that enhances or intensifies a
+                                                                process</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>8. Passageway for childbirth; elastic muscular canal
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>9. Narrow opening between uterus and vagina</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10. Organ that produces egg cells and female hormones
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab5">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <!-- Sidebar with bullet points -->
+                                <div class="content-sidebar">
+                                    <ul class="content-menu">
+                                        <li><em>Concept map</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-7">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Summary</h2>
+                                    <div class="content-text">
+                                        <h5>Concept Map</h5>
+                                        <img src="img/Picture22.png" alt="" class="img-fluid">
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -433,8 +1019,19 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
+    <!-- <script src="js/main.js"></script> -->
     <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('#mainNav');
+            const scrolled = window.scrollY > 80; // Change to your desired scroll trigger point
+
+            if (scrolled) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
         // Tab functionality
         document.querySelectorAll('.sub-nav .nav-link').forEach(link => {
             link.addEventListener('click', function (e) {
@@ -447,79 +1044,10 @@
                 this.classList.add('active');
 
                 // Update content based on section
-                const section = this.getAttribute('data-section');
-                updateContent(section);
+                // const section = this.getAttribute('data-section');
+                // updateContent(section);
             });
         });
-
-        function updateContent(section) {
-            const contentTitle = document.querySelector('.content-title');
-            const contentText = document.querySelector('.content-text');
-            const contentMenu = document.querySelector('.content-menu');
-
-            switch (section) {
-                case 'introduction':
-                    contentTitle.textContent = 'Introduction';
-                    contentMenu.innerHTML = `
-                        <li><em>Brief overview of the lesson/topic</em></li>
-                        <li><em>Learning Objectives</em></li>
-                        <li><em>Importance/Relevance of the topic in real life</em></li>
-                    `;
-                    contentText.innerHTML = `
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    `;
-                    break;
-                case 'lesson-guide':
-                    contentTitle.textContent = 'Lesson Guide';
-                    contentMenu.innerHTML = `
-                        <li><em>Step-by-step instructions</em></li>
-                        <li><em>Key concepts and definitions</em></li>
-                        <li><em>Examples and illustrations</em></li>
-                    `;
-                    contentText.innerHTML = `
-                        <p>This section provides comprehensive guidance for understanding the core concepts of the lesson. Follow the structured approach to maximize your learning experience.</p>
-                        <p>Each concept builds upon the previous one, creating a solid foundation for advanced topics in science education.</p>
-                    `;
-                    break;
-                case 'enrichment':
-                    contentTitle.textContent = 'Enrichment';
-                    contentMenu.innerHTML = `
-                        <li><em>Additional resources</em></li>
-                        <li><em>Extended activities</em></li>
-                        <li><em>Real-world applications</em></li>
-                    `;
-                    contentText.innerHTML = `
-                        <p>Explore beyond the basic curriculum with these enrichment activities designed to deepen your understanding and spark curiosity.</p>
-                        <p>Connect classroom learning with real-world phenomena and discover the fascinating applications of scientific principles in everyday life.</p>
-                    `;
-                    break;
-                case 'assessment':
-                    contentTitle.textContent = 'Assessment';
-                    contentMenu.innerHTML = `
-                        <li><em>Evaluation criteria</em></li>
-                        <li><em>Practice questions</em></li>
-                        <li><em>Self-assessment tools</em></li>
-                    `;
-                    contentText.innerHTML = `
-                        <p>Test your understanding with comprehensive assessment tools designed to measure your progress and identify areas for improvement.</p>
-                        <p>Use the provided rubrics and self-assessment checklists to monitor your learning journey and achieve academic excellence.</p>
-                    `;
-                    break;
-                case 'summary':
-                    contentTitle.textContent = 'Summary';
-                    contentMenu.innerHTML = `
-                        <li><em>Key takeaways</em></li>
-                        <li><em>Review points</em></li>
-                        <li><em>Next steps</em></li>
-                    `;
-                    contentText.innerHTML = `
-                        <p>Consolidate your learning with this comprehensive summary of all key concepts covered in this module.</p>
-                        <p>Review the main points and prepare for the next phase of your scientific education journey.</p>
-                    `;
-                    break;
-            }
-        }
     </script>
 </body>
 
