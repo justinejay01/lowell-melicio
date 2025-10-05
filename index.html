@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Science Digital Multimedia Learning Module</title>
+    <link rel="stylesheet" href="css/plyr.css" />
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" type="text/css">
 
@@ -81,7 +82,8 @@
     </div>
 
     <!-- Content Section -->
-    <section id="about" class="content-section pb-5" style="background: rgba(255, 255, 255, 0.25) !important; padding-top: 120px;">
+    <section id="about" class="content-section pb-5"
+        style="background: rgba(255, 255, 255, 0.25) !important; padding-top: 120px;">
         <div class="container">
             <!-- Sub Navigation Tabs -->
             <div class="row">
@@ -497,8 +499,8 @@
                                                 neurons or sensory receptors.</li>
                                             <li>Cell body contains a nucleus which will process the stimulus.</li>
                                             <li>Axon will transmit stimulus to a gland, muscle, organ, or other neuron.
-                                                
-                                        <img src="img/Picture20.png" alt="" class="img-fluid">
+
+                                                <img src="img/Picture20.png" alt="" class="img-fluid">
                                             </li>
                                         </ul>
 
@@ -653,17 +655,25 @@
                                                     <button class="accordion-button" type="button"
                                                         data-bs-toggle="collapse"
                                                         data-bs-target="#panelsStayOpen-collapseOne"
-                                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                                        aria-expanded="false"
+                                                        aria-controls="panelsStayOpen-collapseOne">
                                                         Lesson 1: THE REPRODUCTION SYSTEM
                                                     </button>
                                                 </h2>
-                                                <div id="panelsStayOpen-collapseOne"
-                                                    class="accordion-collapse collapse"
+                                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                                                     aria-labelledby="panelsStayOpen-headingOne">
                                                     <div class="accordion-body">
                                                         <div class="ratio ratio-16x9">
-                                                            <iframe src="files/Lesson 1. Reproductive System.mp4"
-                                                                frameborder="0"></iframe>
+                                                            <div class="plyr__video-embed" id="player">
+                                                                <div
+                                                                    style="position: relative; padding-bottom: 56.25%; height: 0;">
+                                                                    <iframe id="js_video_iframe"
+                                                                        src="https://jumpshare.com/embed/onzePmMvwQRdgFMA1Aye"
+                                                                        frameborder="0" webkitallowfullscreen
+                                                                        mozallowfullscreen allowfullscreen
+                                                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -682,9 +692,16 @@
                                                     aria-labelledby="panelsStayOpen-headingTwo">
                                                     <div class="accordion-body">
                                                         <div class="ratio ratio-16x9">
-                                                            <iframe
-                                                                src="files/Lesson 1.2. Endocrine and Nervous System.mp4"
-                                                                frameborder="0"></iframe>
+                                                            <div class="plyr__video-embed" id="player">
+                                                                <div
+                                                                    style="position: relative; padding-bottom: 56.25%; height: 0;">
+                                                                    <iframe id="js_video_iframe"
+                                                                        src="https://jumpshare.com/embed/MDWDRFH0ZLrghd5eGM7i"
+                                                                        frameborder="0" webkitallowfullscreen
+                                                                        mozallowfullscreen allowfullscreen
+                                                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -959,7 +976,8 @@
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/plyr.polyfilled.js"></script>
     <!-- <script src="js/main.js"></script> -->
     <script>
         window.addEventListener('scroll', function () {
