@@ -663,13 +663,14 @@
                                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                                                     aria-labelledby="panelsStayOpen-headingOne">
                                                     <div class="accordion-body">
-                                                        <div class="plyr__video-embed" id="player">
-                                                          <iframe
-                                                            src="https://www.youtube.com/embed/7ck0z2iwwPA?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                                                            allowfullscreen
-                                                            allowtransparency
-                                                            allow="autoplay"
-                                                          ></iframe>
+                                                        <div class="ratio ratio-16x9">
+                                                            <div class="plyr__video-embed" id="player">
+                                                                <iframe
+                                                                    src="https://player.mux.com/uqg0100pUjxkenh6bE6DDO541rqJcIptG8Fiy2Ec31t8o?metadata-video-title=Lesson+1%3A+The+Reproductive+System&video-title=Lesson+1%3A+The+Reproductive+System"
+                                                                    style="width: 100%; border: none; aspect-ratio: 16/9;"
+                                                                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                                                                    allowfullscreen></iframe>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -687,14 +688,16 @@
                                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                                                     aria-labelledby="panelsStayOpen-headingTwo">
                                                     <div class="accordion-body">
-                                                        <div class="plyr__video-embed" id="player">
-                                                          <iframe
-                                                            src="https://www.youtube.com/embed/LRZZ62SHnOQ?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                                                            allowfullscreen
-                                                            allowtransparency
-                                                            allow="autoplay"
-                                                          ></iframe>
+                                                        <div class="ratio ratio-16x9">
+                                                            <div class="plyr__video-embed" id="player">
+                                                                <iframe
+                                                                    src="https://player.mux.com/01yNpx5KnGT1RrZ7kEFGs701pHrIQex57wi00eslNxMmYA?metadata-video-title=Lesson+2%3A+The+Endocrine+and+Nervous+System&video-title=Lesson+2%3A+The+Endocrine+and+Nervous+System"
+                                                                    style="width: 100%; border: none; aspect-ratio: 16/9;"
+                                                                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                                                                    allowfullscreen></iframe>
+                                                            </div>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -999,14 +1002,13 @@
                 // updateContent(section);
             });
         });
-        if ('serviceWorker' in navigator)
-        {
+        if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/js/service-worker.js')
-              .then(function(registration) {
-                console.log('Service Worker registered with scope:', registration.scope);
-              }).catch(function(error) {
-                console.error('Service Worker registration failed:', error);
-              });
+                .then(function (registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(function (error) {
+                    console.error('Service Worker registration failed:', error);
+                });
         }
     </script>
 </body>
