@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit VII: INHERITANCE AND VARIATION - DIGI-MOD - Digital Module</title>
+    <link rel="stylesheet" href="css/plyr.css" />
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
+    <style>
+        #mainNav {
+            background: transparent;
+            transition: 250ms ease-in-out;
+            /* Add smooth transition */
+        }
+
+        #mainNav.scrolled {
+            background: rgb(76, 175, 80, 1);
+            /* Optional: add a subtle shadow */
+        }
+
+        /* Change link color and text color for the scrolled state */
+        #mainNav.scrolled .navbar-nav .nav-link,
+        #mainNav.scrolled .navbar-brand {
+            color: #ffffff !important;
+            /* Force text color to dark when scrolled */
+        }
+
+        #mainNav.scrolled .navbar-nav .nav-link.active,
+        #mainNav.scrolled .navbar-nav .nav-link:hover {
+            background: rgb(0, 0, 0, 0.2);
+        }
+
+        /* Hide the dropdown arrow */
+        .navbar .nav-item .dropdown-toggle::after {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="hero-section" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="leaf-logo.png" alt="Logo" width="30" class="me-2">
+                <div>
+                    <div style="font-size: 1.1rem;">GRADE 10</div>
+                    <div style="font-size: 0.9rem; font-weight: normal;">SCIENCE</div>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                style="border: none; color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            ABOUT
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="unit-vi.html">UNIT VI: COORDINATED FUNCTIONS OF THE
+                                    REPRODUCTIVE, ENDOCRINE, AND NERVOUS</a></li>
+                            <li><a class="dropdown-item" href="unit-vii.html">Unit VII: INHERITANCE AND VARIATION</a>
+                            </li>
+                            <li><a class="dropdown-item" href="unit-viii.html">UNIT VIII: BIODIVERSITY AND EVOLUTION</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#more">MORE</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <section id="about" class="content-section pb-5"
+        style="background: rgba(255, 255, 255, 0.25) !important; padding-top: 120px;">
+        <div class="container">
+            <!-- Sub Navigation Tabs -->
+            <div class="row">
+                <div class="col-12">
+                    <nav class="sub-nav">
+                        <ul class="nav nav-pills justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-section="introduction" data-bs-toggle="tab"
+                                    href="#tab1">INTRODUCTION</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-section="lesson-guide" data-bs-toggle="tab" href="#tab2">LESSON
+                                    GUIDE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-section="enrichment" data-bs-toggle="tab"
+                                    href="#tab3">ENRICHMENT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-section="assessment" data-bs-toggle="tab"
+                                    href="#tab4">ASSESSMENT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-section="summary" data-bs-toggle="tab" href="#tab5">SUMMARY</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="row">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab1">
+                        <div class="row">
+                            <div class="col">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Introduction</h2>
+                                    <div class="content-text">
+                                        <p>Many People you see every day are different. A variety of traits such as hair
+                                            and eye color, body structure, height, and weight are all influenced by
+                                            genetics.</p>
+                                        <p>A good quality of a seed tree produces a good new plant. Just like human
+                                            beings, good parents will have good children. When a baby is born, good
+                                            parents will have good children. When a baby is born, they often say he/she
+                                            just like his/her mother or mother. There are many traits easily recognized
+                                            from the children that resemble their parents. The passing of traits from
+                                            parents to child is called heredity.</p>
+                                        <p class="mt-2">At the end of the unit, the students must be able to:</p>
+                                        <ol class="list-group list-group-numbered">
+                                            <li class="list-group-item">explain how protein is made using information
+                                                from amino acid;</li>
+                                            <li class="list-group-item">explain how mutations may cause changes in the
+                                                structure and function of a protein;</li>
+                                        </ol>
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="row">
+                            <div class="col">
+                                <!-- Main Content -->
+                                <div class="main-content mt-3">
+                                    <h2 class="content-title">Unit VII - INHERITANCE AND VARIATION</h2>
+                                    <div class="content-text">
+                                        <h3>LESSON 1: HOW PROTEIN IS MADE USING INFORMATION FROM DNA</h3>
+
+                                        <p>Different types of proteins exist in every living organism. Protein is the
+                                            most varied molecule in which the human body contains at least 10,000
+                                            different kinds of proteins. Since the human body is made up of cells, their
+                                            unique characteristics are determined by the type of proteins they possess.
+                                            For example, the red blood cells are able to carry oxygen throughout the
+                                            body because they contain a protein that is not found in other cells.
+                                            Another example is that the muscle cells are made up of fibrous protein
+                                            which allows the movement of the muscle to contract and relax. Body covering
+                                            of the body such as the skin, nail, and hair contain a kind of protein that
+                                            makes them tough and horny.</p>
+
+                                        <p>The proteins that occur in the body are large, complex molecules composed
+                                            mainly oxygen, hydrogen, carbon, and nitrogen. Proteins are essential part
+                                            structure of cells. It acts as an enzyme or catalyst for chemical reactions
+                                            in cells.</p>
+
+                                        <h5>Amino Acid</h5>
+                                        <p>Amino acids are the building blocks of proteins, which are made up of long
+                                            chains of chemical units. There are 20 different amino acids. Our body
+                                            system can synthesize non-essential amino acids through metabolic process
+                                            from simple organic molecules and the nine essential amino acids must be
+                                            obtained from the dietary food we intake.</p>
+
+
+                                        <h4>IMPORTANCE OF PROTEINS IN THE BODY</h4>
+                                        <ol>
+                                            <li>Protein hormones regulate many physiological processes, like insulin,
+                                                that affects glucose transport into cells.</li>
+                                            <li>Proteins in the blood help as blood clotting factor and transport
+                                                molecule. For instance, hemoglobin transports oxygen in the blood.</li>
+                                            <li>Protein acts as ion channels, carrier, and receptor molecules in the
+                                                cell membrane.</li>
+                                        </ol>
+
+                                        <h4>THE THREE KINDS OF RNA IN PROTEIN SYNTHESIS</h4>
+                                        <p>There are three kinds of RNA in which cells build proteins. This process is
+                                            called protein synthesis.</p>
+                                        <img src="img/unit-vii/Picture1.png" alt="" class="img-fluid">
+                                        <ol>
+                                            <li><strong>Messenger RNA (mRNA)</strong> is a type of molecule of RNA that
+                                                travels from the nucleus to the ribosomes in the cytoplasm, where the
+                                                information in the copy is used for a protein product.</li>
+                                            <li><strong>Ribosomal RNA (rRNA)</strong> is the RNA component of the
+                                                ribosome and a cell's protein factory in all living cells. It provides a
+                                                mechanism for decoding mRNA into amino acid and interacts with tRNA.
+                                            </li>
+                                            <li><strong>Transfer RNA (tRNA)</strong> is an adaptor molecule composed of
+                                                RNA, typically 73 to 93 nucleotides in length that brings amino acids
+                                                from the cytoplasm to a ribosome to help make the growing protein.</li>
+                                        </ol>
+
+                                        <img src="img/unit-vii/Picture2.png" alt="" class="img-fluid">
+                                        <p>The genetic code is shared by all organisms. For instance, you want to
+                                            determine which amino acid is encoded by CAU codon. First, find the first
+                                            base C from the first nucleotides in the left part of the Genetic Code.
+                                            Then, find the second base A from the second nucleotides on the upper part.
+                                            Finally, find the third base U from the third nucleotides in the right side
+                                            of the Genetic Code. Hence, we find the amino acid histidine as encoded by
+                                            codon CAU.</p>
+
+                                        <h4>DNA POLYMERASE</h4>
+                                        <p>Enzymes and other proteins are responsible for the process of replication. An
+                                            enzyme begins the process by unzipping the double helix to separate the
+                                            strands of DNA. Some proteins hold the strands apart, which serve as the
+                                            template. The floating free nucleotides in the nucleus will be paired with
+                                            the nucleotide of the existing DNA strand. The DNA polymerase (group of
+                                            enzymes) is responsible in bonding the new nucleotide together. When the
+                                            process is done, it forms two complete molecules of DNA, each exactly the
+                                            same the original double strand.</p>
+
+                                        <h4>THE REPLICATION PROCESS</h4>
+                                        <p>Before the cell of an organism can reproduce, it must first replicate or make
+                                            a copy of their DNA. Copy of the DNA happens whether the cell is prokaryote
+                                            or a eukaryote. The following steps describe the replication of DNA in both
+                                            eukaryotic and prokaryotic cells:</p>
+                                        <ol>
+                                            <li>DNA replication takes place in the cytoplasm of prokaryotes and in the
+                                                nucleus of eukaryotes. The enzymes start to unzip the double helix as
+                                                the nucleotide base pairs separate. Each side of the double helix runs
+                                                in opposite directions. At same time, replication begins on both strands
+                                                of the molecules.</li>
+                                            <li>Free nucleotides pair with the base exposed as the template strand
+                                                continuously unzip, an enzyme complex-DNA polymerase attaches the
+                                                nucleotide together to form a new strand similar to each template.</li>
+                                            <li>A sub-unit of the DNA polymerase proofreads the new DNA and the DNA
+                                                ligase (enzyme) seals up the fragments into one long strand.</li>
+                                            <li>Two similar double-stranded molecules of DNA result from replication.
+                                                The new copies automatically wind up again. According to Nowick, "DNA
+                                                replication is semi-conservative because one old strand is conserved,
+                                                and a new strand is made."</li>
+                                        </ol>
+
+                                        <h4>PROCESSES OF PRODUCING PROTEIN FROM DNA</h4>
+                                        <h5>1. Transcription</h5>
+                                        <p>The DNA is found inside the nucleus of the cells which are embedded in the
+                                            chromosomes. The genetic information within the DNA must be transported to
+                                            the ribosome in the cytoplasm where protein synthesis takes place. The
+                                            genetic information or code is copied into the mRNA through the process of
+                                            transcription. The transcription process occurs when the nucleotide sequence
+                                            along the DNA is copied into a strand of mRNA. The DNA strand will be
+                                            exposed once the DNA molecule uncoils. The RNA polymerase is responsible for
+                                            the alignment and binding together of the ribonucleotides that will create
+                                            the single strand of RNA molecule. The mRNA molecule, as the complimentary
+                                            ribonucleotides, attach to the exposed bases of the DNA strand.</p>
+
+                                        <img src="img/unit-vii/Picture3.png" alt="" class="img-fluid">
+                                        <h5>2. Translation</h5>
+                                        <p>Translation is the final step in the synthesis of a small protein through the
+                                            help of the mRNA. The transfer of code from the mRNA to a small protein
+                                            begins when the mRNA molecule attaches to the ribosome, which forms the
+                                            mRNA-ribosome complex. The different amino acids found in the cytoplasm must
+                                            first be transferred in the mRNA-ribosome complex by another RNA. An amino
+                                            acid is then attached to a specific transfer RNA (tRNA). There are as plenty
+                                            of tRNA as to the presence of amino acids because it is intended that each
+                                            tRNA is coded to specific kind of amino acid. Translation is the converting
+                                            the information from the RNA into a protein. Each tRNA with its attached
+                                            specific amino acid moves to the mRNA-ribosome complex.</p>
+
+                                        <img src="img/unit-vii/Picture4.png" alt="" class="img-fluid">
+                                        <p>The ribosome changes its position by three nucleotides. The tRNA without the
+                                            amino acid is detached from the ribosome. The ribosome now shifts to the
+                                            next codon, ready to bind another tRNA with its specific amino acid. The
+                                            mRNA codon recognizes which tRNA is next, as a result, specifying which
+                                            amino acid will be next in the polypeptide (addition of amino acids to the
+                                            protein) chain. The process is repeated as the ribosome goes along the mRNA
+                                            chain. A codon in the mRNA stops when the ribosome encounters the addition
+                                            of amino acids to the protein.</p>
+
+                                        <h3>LESSON 2: MUTATIONS THAT OCCUR IN SEX CELLS AS BEING
+                                                HERITABLE</h3
+                                        <p>Many types of mutation can occur in an organism's DNA. Biologically, mutation
+                                            is the change in genetic material. It can be a source of beneficial genetic
+                                            variation or it may have dangerous effects. Mutations can result from DNA
+                                            copying mistakes made during cell division, and exposure to ionizing
+                                            radiation like gamma rays from radioactive elements such as uranium and
+                                            plutonium. Another cause of DNA copying mistakes is direct exposure to
+                                            chemicals or through infection by bacteria and viruses. The different types
+                                            of agents, whether they are in the form of physical or chemical that can
+                                            cause the alteration of the structure or sequence of DNA, are called
+                                            mutagens.</p>
+
+                                        <h4>MUTATIONS OCCURRING IN SEX CELLS</h4>
+                                        <p>How are genetic traits or characteristics passed on from parents to their
+                                            child? What do you think can determine the combination of traits that are
+                                            passed on? Mutations that occur in sex cells can be passed from parent to
+                                            their children. Since the chromosomes carry information about the
+                                            characteristics inherited from parents, it is better to have a clear
+                                            understanding on the structure of a chromosome. Chromosome is made up of a
+                                            chemical substance called deoxyribonucleic acid or DNA. Most of the cells in
+                                            the body contain 23 pairs of chromosomes (46 sets of chromosomes). The sex
+                                            cells contain half this number. When a sperm and egg cell unite, the
+                                            fertilized egg ends up with 46 chromosomes, which are 23 chromosomes from
+                                            each parent. The chromosome contains many genes, a section of a chromosome
+                                            that determines a single trait. Genes are the basic unit of heredity. Once
+                                            the egg is fertilized, it may now contain two genes for each trait - one
+                                            from the father and one from the mother. This is how hereditary information
+                                            is passed from one generation to the next. Do you think defective genes can
+                                            be inherited?</p>
+
+                                        <img src="img/unit-vii/Picture5.png" alt="" class="img-fluid">
+                                        <h4>SOMATIC AND GERMINAL MUTATION</h4>
+                                        <p>Eukaryotic organisms, such as mammals, humans, amphibians, avians, and
+                                            vascular plants, have two primary cell types: the germ and the somatic.
+                                            Mutations can occur in either of the two cell types. Mutation in somatic
+                                            cells is called somatic mutation. It occurs in non-reproductive cells and
+                                            will not be passed onto the offspring. They do not occur in cells that give
+                                            rise to sex cells (sperm and egg cell). Therefore, mutation will not be
+                                            passed along to the next offspring by sexual means.</p>
+
+                                        <img src="img/unit-vii/Picture6.png" alt="" class="img-fluid">
+                                        <p>Germinal mutation is an alteration of the nucleotide sequence of the DNA that
+                                            makes up a gene. The germ cells give rise to sex cells that will carry the
+                                            mutations that will be passed on to the next generation, when a successful
+                                            mating happened. Generally, this type of mutation is not expressed in the
+                                            individual offspring containing the mutation, but it would be expressed in
+                                            either negative or positive affected sex cell production. For instance,
+                                            Queen Victoria of England introduced the hemophilia allele into a few number
+                                            of the royal families of Europe. The germ line mutation carried by the queen
+                                            was passed to their generation.</p>
+
+                                        <h4>CHROMOSOME MUTATIONS</h4>
+                                        <p>Chromosome mutations are departures from what is normal or desirable set of
+                                            chromosomes either for an individual or from a species. It refers also to
+                                            changes in the number sets of chromosome (-ploidy) and changes in the number
+                                            of individual chromosomes (-somy) and its appearance. There are several
+                                            kinds of chromosomal mutations which are enumerated below.</p>
+
+                                        <h5>INSERTION</h5><br>
+                                        <img src="img/unit-vii/Picture7.png" alt="" class="img-fluid">
+                                        <p>Insertion is a genetic material added from another chromosome.</p>
+
+                                        <h5>TRANSLOCATION</h5><br>
+                                        <img src="img/unit-vii/Picture8.png" alt="" class="img-fluid">
+                                        <p>Translocation happens when part of a chromosome breaks off and combined to
+                                            another chromosome. This type of disorder is due to chromosomal level
+                                            mutation.</p>
+
+                                        <h5>DELETION</h5><br>
+                                        <img src="img/unit-vii/Picture9.png" alt="" class="img-fluid">
+                                        <p>Deletion happens when there is loss of part of a chromosome.</p>
+
+                                        <h5>DUPLICATION</h5><br>
+                                        <img src="img/unit-vii/Picture10.png" alt="" class="img-fluid">
+                                        <p>Duplication happens if there are extra copies of a part of a chromosome.</p>
+
+                                        <h5>INVERSION</h5><br>
+                                        <img src="img/unit-vii/Picture11.png" alt="" class="img-fluid">
+                                        <p>Inversion happened when the direction of a part of a chromosome is reversed.
+                                        </p>
+
+                                        <h4>GENETIC DISORDERS</h4>
+                                        <h5>1. Recessive Disorders</h5>
+                                        <p>Recessive disorders happen when a child receives two defective genes from
+                                            each parent. A person who receives one defective recessive gene is called a
+                                            carrier. The carrier does not express the disorder because it is not
+                                            detectable by the dominant normal gene. Therefore, it can pass the defective
+                                            gene to their children.</p>
+
+                                        <ul>
+                                            <li>a. Sickle cell anemia is a genetic blood disorder. A person who inherits
+                                                two defective genes will have abnormally shaped red blood cells and may
+                                                die at an early stage.</li>
+                                            <li>b. Tay-Sachs disease is characterized by the lack of an important
+                                                chemical in the brain. Infants who have this kind of disease usually die
+                                                within their first five years.</li>
+
+                                            <img src="img/unit-vii/Picture12.png" alt="" class="img-fluid">
+                                            <li>c. Phenylketonuria or PKU is a rare genetic disorder that can cause
+                                                serious mental retardation in infants. An infant who has this kind of
+                                                disorder cannot break down phenylalanine (chemical commonly found in
+                                                food) that it builds up in the body, in which the brain is affected.
+                                                Phenylalanine is obtained from an artificial sweetener called aspartame.
+                                                This kind of disease can be treated through a special diet.</li>
+                                            <li>d. Cystic fibrosis is a disease in which some glands produce too much
+                                                mucus that it clogs and damages the lungs. This disease is fatal among
+                                                children because it causes difficulty in breathing.</li>
+                                        </ul>
+
+                                        <h5>2. Sex-linked Disorders</h5>
+                                        <p>Sex-linked disorders are more common in men because they have only one X
+                                            chromosome, so all defective genes on the chromosome will be expressed.
+                                            Since women carry two X chromosomes, a recessive defective gene on one X
+                                            chromosome can be covered by a normal gene on the other X-chromosome. A
+                                            woman who has this kind of disease may pass it on to her children. The most
+                                            common sex-linked disorder is color blindness and hemophilia.</p>
+
+                                        <img src="img/unit-vii/Picture13.png" alt="" class="img-fluid">
+                                        <br>
+                                        <h5>3. Human Genetic Syndrome</h5>
+                                        <p>There are some genetic disorders that may have few or too much chromosomes. A
+                                            person who survived during chromosomal mutations is categorized by a
+                                            distinctive set of mental or physical abnormalities.</p>
+
+                                        <ul>
+                                            <li>a. Cri du chat is caused by the deletion of part of the short arm of
+                                                chromosomes 5. Babies who have this disease have wide-set eyes and a
+                                                small head and jaw.</li>
+                                            <li>b. William syndrome is the result from the loss of a segment in
+                                                chromosome 7. They have large ears and facial features that make them
+                                                look like elves.</li>
+                                            <li>c. Down syndrome (trisomy 21) is known as Mongolism. A child receives an
+                                                extra chromosome (chromosome 21) and has a distinctive physical
+                                                appearance. It is the most common cause of mental retardation. It can be
+                                                mild or severe mental retardation.</li>
+
+                                            <img src="img/unit-vii/Picture14.png" alt="" class="img-fluid">
+                                            <li>d. Edward syndrome (trisomy 18) happens when there is an extra number 18
+                                                chromosome. It shows mental retardation and physical abnormalities to
+                                                the child and can live beyond one year.</li>
+                                            <li>e. Patau's syndrome (trisomy 13) is caused by an extra copy of number 13
+                                                chromosome. Based on the study, about 90% of babies with this syndrome
+                                                do not survive in infancy. Severe mental retardation occurred in those
+                                                who survived.</li>
+
+                                            <img src="img/unit-vii/Picture15.png" alt="" class="img-fluid">
+                                            <li>f. Klinefelter's syndrome (XXY) is another genetic disorder. A male who
+                                                has this syndrome has two or more X-chromosomes in addition to their Y
+                                                chromosomes. They lack facial hair and their testes, including the
+                                                prostate gland, are underdeveloped.</li>
+                                            <li>g. Turner's syndrome has 45 chromosomes. About 96-98% with this
+                                                condition do not survive at birth. It is a genetic disorder that affects
+                                                women. Those who survived with this condition usually have no
+                                                menstruation, have narrow hips, breasts that are not developed, and
+                                                broad shoulders and neck.</li>
+                                        </ul>
+
+                                        <img src="img/unit-vii/Picture16.png" alt="" class="img-fluid">
+                                        <br>
+                                        <h4>IMPACT OF MUTATION ON PHENOTYPE</h4>
+                                        <p>Mutations of the chromosome directly affect the genes which can cause human
+                                            genetic disorders. The gene can no longer do its tasks normally once it
+                                            breaks up due to mutation. Gene mutation has a great impact on the organism.
+                                            For instance, substitution occurs in a coding region of DNA. If substitution
+                                            happens, the enzymes are not able to bind to its substrate, so the mutation
+                                            directly affects protein folding. Thus, it damages the protein's function.
+                                            There is also a premature stop codon.</p>
+
+                                        <img src="img/unit-vii/Picture17.png" alt="" class="img-fluid">
+                                        <p>Gene mutations sometimes do not affect an organism's phenotype due to many
+                                            codons that code for the same amino acid. A mutation that has no effect on
+                                            the protein is called silent mutation. Most of the amino acids of silent
+                                            mutation are encoded by many different codons. For instance, if the third
+                                            base in the TCT codon for serine becomes different to any one of the other
+                                            bases, it can still be encoded. It is called silent mutation since there is
+                                            no change or the product cannot be detected without sequencing the gene.
+                                            Missense mutation happens when a point of mutation, in which a single
+                                            nucleotide change, results in different codes of amino acid.</p>
+
+                                        <img src="img/unit-vii/Picture18.png" alt="" class="img-fluid"><br>
+                                        <h4>IMPACT OF MUTATION ON OFFSPRING</h4>
+                                        <p>Mutation occurs in the body cells and in germ cells. Mutations in body cells
+                                            damage only the organisms in which they occur while in germ cells, mutation
+                                            may be passed to offspring. In some cases, mutation results in a more
+                                            beneficial phenotype due to being favored by natural selection and
+                                            increasing in a population.</p>
+
+                                        <h4>CAUSES OF MUTATIONS:</h4>
+                                        <ul>
+                                            <li>1. SMOKING CAN RAISE RISK OF GENETIC MUTATION.
+                                                <p>Smoking can cause germ cell mutagens that can destroy genes and cause
+                                                    cancer and other diseases. If diseases occur, they will be inherited
+                                                    and can be detrimental to the children later in their life. When a
+                                                    mother smokes during her conception, it may lead to genetic
+                                                    alterations in her child.</p>
+                                            </li>
+                                            <li>2. EFFECT OF OLD AGE ON OFFSPRING
+                                                <p>Many experts found out that old age at conception had an effect on
+                                                    offspring's intelligence and personality. Healthy and normal eggs
+                                                    produced by females will decline as they get older. There is a
+                                                    chromosomal error happening more frequently in the eggs, resulting
+                                                    in abnormal embryos. Older mothers (aged 36 to 45) are at a higher
+                                                    risk of having a baby with Down syndrome, Patau's syndrome, and
+                                                    Edward's syndrome. For early detection of these diseases, parents
+                                                    should prepare for the special needs of the baby.</p>
+                                            </li>
+                                            <li>3. CHEMOTHERAPY
+                                                <p>Chemotherapy drugs can cause DNA mutations to the offspring. The
+                                                    genome affected by chemotherapy drug will not stabilize, resulting
+                                                    in new mutation.</p>
+                                            </li>
+                                            <li>4. EXTERNAL INFLUENCES
+                                                <p>Too much exposure to hazardous chemicals and radiation such as x-rays
+                                                    and gamma rays can cause mutations. The DNA will break down. Though
+                                                    the cell repairs the DNA, it can no longer return to the original
+                                                    structure, resulting in new mutations.</p>
+                                            </li>
+                                        </ul>
+
+                                        <strong class="mb-4">LIFE LESSONS</strong>
+                                        <p style="margin-bottom: 0px;">Man's Journey into Earth's Landforms</p>
+                                        <p>You had just learned that chromosomes contain many genes, a section of a
+                                            chromosome that determines a single trait and the genes are the basic unit
+                                            of heredity. All the traits you possess now are inherited from our parents.
+                                            We cannot choose what kind of traits we want for ourselves. We do not want
+                                            to inherit diseases from our parents. We should be thankful if we have good
+                                            traits and characteristics and a normal physical appearance. We have to
+                                            understand other people who inherited genetic disorders. We have to help
+                                            them in our own little way that we really care.</p>
+
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab3">
+                        <div class="row">
+                            <div class="col">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Enrichment</h2>
+                                    <div class="content-text">
+                                        <h2 class="text-center mb-2">"From DNA to Traits"</h2>
+
+                                        <h3 class="mb-3">Title: Connecting the Code: How DNA Creates You</h3>
+
+                                        <h5 class="mb-2">Objective:</h5>
+                                        <ul class="mb-2" style="list-style-type: disc;">
+                                            <li>Illustrate the relationship between DNA, RNA, protein synthesis, and
+                                                inherited traits.</li>
+                                            <li>Analyze how mutations can affect protein production and physical
+                                                characteristics.</li>
+                                            <li>Reflect on how environmental factors influence genetic information.</li>
+                                        </ul>
+
+                                        <h5>Instructions:</h5>
+                                        <span class="mb-4">Explore the following multimedia and reflection-based
+                                            activities. You may complete them digitally or submit them as a written
+                                            response.</span>
+
+                                        <h4 class="mt-4 mb-2">Part 1: Create and Connect</h4>
+                                        <span style="margin-bottom: 0px;"><strong>Activity:</strong><br>
+                                            Use the concept map below as your guide and create your own visual flow
+                                            showing how a gene mutation can lead to a change in protein function and
+                                            eventually affect an organism’s trait.<br>
+                                            You can design it digitally (using Canva, Google Slides, or PowerPoint) or
+                                            hand-draw it and upload a photo.<br>
+                                            Your flow must include:
+                                        </span>
+                                        <ul class="mt-2 mb-4" style="list-style-type: disc;">
+                                            <li>DNA → RNA → Protein → Trait</li>
+                                            <li>Example: Normal vs. Mutated Hemoglobin in Sickle Cell Anemia</li>
+                                        </ul>
+
+                                        <h4 class="mb-2">Part 2: Critical Thinking</h4>
+                                        <span>Answer the following higher-order questions:</span>
+                                        <ol class="mb-4">
+                                            <li>How can mutations be both harmful and beneficial to living organisms?
+                                            </li>
+                                            <li>If you were a genetic engineer, what method would you develop to reduce
+                                                harmful mutations? Explain your answer.</li>
+                                            <li>How can lifestyle choices (e.g., smoking, radiation exposure, or diet)
+                                                influence the DNA or genetic health of future generations?</li>
+                                        </ol>
+
+                                        <h4 class="mb-2">Part 3: “Decode the Message”</h4>
+                                        <span><strong>Instruction:</strong><br>
+                                            Use the genetic code table to translate the following mRNA sequence into a
+                                            chain of amino acids.<br>
+                                            AUG - GGC - UUU - UGA<br>
+                                            Then, explain what happens if the second codon mutates from GGC to GAC.<br>
+                                            (Hint: What protein change will occur? Will it still function properly?)
+                                        </span>
+
+                                        <h5 class="mt-4 mb-2">Output:</h5>
+                                        <span>Submit your answers in any of the following forms:</span>
+                                        <ul style="list-style-type: disc;">
+                                            <li>A short written reflection (200–300 words)</li>
+                                            <li>A 1–2 minute video presentation or voice recording</li>
+                                            <li>A digital poster/infographic explaining your understanding</li>
+                                        </ul>
+
+                                        <h5 class="mb-2">Rubrics</h5>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Criteria</th>
+                                                        <th scope="col">Excellent (3)</th>
+                                                        <th scope="col">Satisfactory (2)</th>
+                                                        <th scope="col">Needs Improvement (1)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Concept Understanding</td>
+                                                        <td><span>Demonstrates deep understanding of protein synthesis
+                                                                and mutation effects</span></td>
+                                                        <td><span>Shows general understanding with minor errors</span>
+                                                        </td>
+                                                        <td><span>Shows limited or incorrect understanding</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Creativity</td>
+                                                        <td><span>Presentation is original, engaging, and
+                                                                well-organized</span></td>
+                                                        <td><span>Some creativity but lacks organization</span></td>
+                                                        <td><span>Minimal creativity or effort</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Reflection Quality</td>
+                                                        <td><span>Thoughtful, clear, and supported with examples</span>
+                                                        </td>
+                                                        <td><span>Some insights but lacks depth</span></td>
+                                                        <td><span>Superficial or incomplete reflections</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab4">
+                        <div class="row">
+                            <div class="col">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Assessment</h2>
+                                    <div class="content-text">
+                                        <h2>REMEMBERING CONTENT</h2>
+                                        <h5>Multiple Choice: Choose the correct answer. Write the letter of the best
+                                            answer in the blank before each number.</h5>
+
+                                        <div class="mt-4">
+                                            <div><span>__________ 1. All of the following are true about RNA except
+                                                    __________.</span></div>
+                                            <ol type="a">
+                                                <li><span>RNA can leave the nucleus.</span></li>
+                                                <li><span>RNA contains uracil in place of thymine.</span></li>
+                                                <li><span>RNA is a single strand.</span></li>
+                                                <li><span>RNA and DNA have the same 5-C sugar.</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 2. If the sequence of bases along one side of a DNA
+                                                    molecule is AAGCT, the complementary sequence of bases on the other
+                                                    side of the DNA molecule is __________.</span></div>
+                                            <ol type="a">
+                                                <li><span>AAGCT</span></li>
+                                                <li><span>UUCGA</span></li>
+                                                <li><span>GGTAC</span></li>
+                                                <li><span>TICGA</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 3. The three nitrogenous bases carried by tRNA is
+                                                    called __________.</span></div>
+                                            <ol type="a">
+                                                <li><span>codon</span></li>
+                                                <li><span>anticodon</span></li>
+                                                <li><span>code</span></li>
+                                                <li><span>genes</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 4. Messenger RNA (mRNA) is formed from DNA. This
+                                                    process is called __________.</span></div>
+                                            <ol type="a">
+                                                <li><span>duplication</span></li>
+                                                <li><span>transcription</span></li>
+                                                <li><span>replication</span></li>
+                                                <li><span>translation</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 5. Which one of these is not a valid comparison
+                                                    between DNA and RNA?</span></div>
+                                            <div><span>DNA</span></div>
+                                            <ol type="a">
+                                                <li><span>double helix</span></li>
+                                                <li><span>replicates</span></li>
+                                                <li><span>deoxyribose</span></li>
+                                                <li><span>thymine</span></li>
+                                            </ol>
+
+                                            <div><span>RNA</span></div>
+                                            <ol type="a">
+                                                <li><span>single stranded</span></li>
+                                                <li><span>duplicates</span></li>
+                                                <li><span>ribose</span></li>
+                                                <li><span>uracil</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 6. If a cell has 18 chromosomes, how many chromosomes
+                                                    would each daughter cell have after mitosis?</span></div>
+                                            <ol type="a">
+                                                <li><span>9</span></li>
+                                                <li><span>36</span></li>
+                                                <li><span>18</span></li>
+                                                <li><span>cannot be determined</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 7. Which of the following genetic syndrome is known as
+                                                    mongolism?</span></div>
+                                            <ol type="a">
+                                                <li><span>Klinefelter's syndrome</span></li>
+                                                <li><span>William's syndrome</span></li>
+                                                <li><span>Down syndrome</span></li>
+                                                <li><span>Turner's syndrome</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 8. When a particular individual has three chromosomes
+                                                    of a particular type, this chromosomal aberration is called
+                                                    __________.</span></div>
+                                            <ol type="a">
+                                                <li><span>monosomy</span></li>
+                                                <li><span>duplication</span></li>
+                                                <li><span>trisomy</span></li>
+                                                <li><span>inversion</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 9. When a particular individual loses some part of
+                                                    his/her chromosome, this chromosomal aberration is called
+                                                    __________.</span></div>
+                                            <ol type="a">
+                                                <li><span>deletion</span></li>
+                                                <li><span>inversion</span></li>
+                                                <li><span>translocation</span></li>
+                                                <li><span>duplication</span></li>
+                                            </ol>
+
+                                            <div><span>__________ 10. Which of the following syndrome occurs when a male
+                                                    carries two or more X- and Y chromosomes in his genes?</span></div>
+                                            <ol type="a">
+                                                <li><span>Down syndrome</span></li>
+                                                <li><span>Turner's syndrome</span></li>
+                                                <li><span>Klinefelter's syndrome</span></li>
+                                                <li><span>Patau's syndrome</span></li>
+                                            </ol>
+                                        </div>
+
+                                        <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab5">
+                        <div class="row">
+                            <div class="col">
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <h2 class="content-title">Summary</h2>
+                                    <div class="content-text">
+                                        <span>RNA, or ribonucleic acid, is one of the most important molecules in our
+                                            cells because it helps turn genetic information into life itself. This
+                                            concept map shows the three main types of RNA <strong>—messenger RNA (mRNA),
+                                                ribosomal RNA (rRNA), and transfer RNA (tRNA)—</strong> and how they
+                                            work together in
+                                            making proteins. Messenger RNA carries the instructions from our DNA to the
+                                            ribosome, where proteins are made. Ribosomal RNA helps build the ribosomes,
+                                            while transfer RNA brings the right amino acids to form the protein chain.
+                                            Each type of RNA has a special job, and together, they make sure our cells
+                                            can produce the proteins we need to grow, repair, and function
+                                            properly.</span>
+                                        <img src="img/unit-vii/Picture19.jpg" alt="" class="img-fluid">
+                                    </div>
+
+                                    <!-- Decorative leaf elements
+                                    <div class="floating-leaf leaf-1"></div>
+                                    <div class="floating-leaf leaf-2"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/plyr.polyfilled.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('#mainNav');
+            const scrolled = window.scrollY > 80; // Change to your desired scroll trigger point
+
+            if (scrolled) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Tab functionality
+        document.querySelectorAll('.sub-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                document.querySelectorAll('.sub-nav .nav-link').forEach(l => l.classList.remove('active'));
+
+                // Add active class to clicked link
+                this.classList.add('active');
+
+                // Update content based on section
+                // const section = this.getAttribute('data-section');
+                // updateContent(section);
+            });
+        });
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/js/service-worker.js')
+                .then(function (registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(function (error) {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
