@@ -37,6 +37,21 @@
         .navbar .nav-item .dropdown-toggle::after {
             display: none;
         }
+        
+        /* Ensure dropdown items can wrap text */
+        .dropdown-item {
+            white-space: normal;
+            /* Allow text to wrap onto multiple lines */
+            word-wrap: break-word;
+            /* Break long words to fit inside the container */
+        }
+
+        /* Optional: To ensure no overflow happens */
+        .dropdown-menu {
+            max-width: max-content;
+            /* Set a max width for the dropdown */
+            word-wrap: break-word;
+        }
     </style>
 </head>
 

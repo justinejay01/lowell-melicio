@@ -37,6 +37,44 @@
         .navbar .nav-item .dropdown-toggle::after {
             display: none;
         }
+
+        /* Ensure dropdown items can wrap text */
+        .dropdown-item {
+            white-space: normal;
+            /* Allow text to wrap onto multiple lines */
+            word-wrap: break-word;
+            /* Break long words to fit inside the container */
+        }
+
+        /* Optional: To ensure no overflow happens */
+        .dropdown-menu {
+            max-width: max-content;
+            /* Set a max width for the dropdown */
+            word-wrap: break-word;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 0.8rem 3rem;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .copyright {
+                font-size: 0.8rem;
+                padding: 0.6rem 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -63,13 +101,17 @@
                         <a class="nav-link active" href="/">HOME</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             ABOUT
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="unit-vi.html">UNIT VI: COORDINATED FUNCTIONS OF THE REPRODUCTIVE, ENDOCRINE, AND NERVOUS</a></li>
-                            <li><a class="dropdown-item" href="unit-vii.html">Unit VII: INHERITANCE AND VARIATION</a></li>
-                            <li><a class="dropdown-item" href="unit-viii.html">UNIT VIII: BIODIVERSITY AND EVOLUTION</a></li>
+                            <li><a class="dropdown-item" href="unit-vi.html">UNIT VI: COORDINATED FUNCTIONS OF THE
+                                    REPRODUCTIVE, ENDOCRINE, AND NERVOUS</a></li>
+                            <li><a class="dropdown-item" href="unit-vii.html">Unit VII: INHERITANCE AND VARIATION</a>
+                            </li>
+                            <li><a class="dropdown-item" href="unit-viii.html">UNIT VIII: BIODIVERSITY AND EVOLUTION</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -92,6 +134,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <div class="copyright">COPYRIGHT©2025</div>
 
     <script src="js/scripts.js"></script>
     <script src="js/plyr.polyfilled.js"></script>
